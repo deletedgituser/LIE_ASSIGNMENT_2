@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>J-RIZ</title>
+
+    <link href="/dist/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Work+Sans:wght@100;200;300;400&display=swap"
+        rel="stylesheet" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Urbanist:wght@100;300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <link rel="stylesheet" href="./src/css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header class="pattern">
+        <div class="px-6 mx-auto">
+            <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-6">
+                <div class="flex h-16 items-center justify-between">
+                    <div class="flex-1 md:flex md:items-center md:gap-12">
+                        <a class="block" href="#">
+                            <span class="sr-only">Home</span>
+                            <img class="w-auto h-12 sm:h-20" src="./src/images/1-removebg-preview.png" alt="logo" />
+                        </a>
+                    </div>
+
+                    <div class="flex lg:hidden px-6">
+                        <button id="menu-toggle" type="button"
+                            class="-m-2.5 inline-flex items-center justify-center rounded-md p-1.5 text-gray-300">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="hidden lg:flex lg:gap-x-12">
+                        <ul class="flex items-center gap-6 text-sm">
+                            <li>
+                                <a class="px-1 py-1 text-sm font-light text-white transition-colors duration-300 transform hover:underline underline-offset-8 tracking-widest custom-font-2"
+                                    href="#about">
+                                    About
+                                </a>
+                            </li>
+                            <li>
+                                <a class="py-1 text-sm font-light text-white transition-colors duration-300 transform hover:underline underline-offset-8 tracking-widest custom-font-2"
+                                    href="#works">
+                                    Works
+                                </a>
+                            </li>
+                            <li>
+                                <a class="py-1 text-sm font-light text-white transition-colors duration-300 transform hover:underline underline-offset-8 tracking-widest custom-font-2"
+                                    href="#contact">
+                                    Contact
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Mobile menu, show/hide based on menu open state -->
+                    <div class="hidden" role="dialog" aria-modal="true" id="menu">
+                        <div class="fixed inset-0 z-10">
+                            <div
+                                class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-10 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                                <div class="flex lg:hidden px-8 items-center justify-between">
+                                    <a href="#" class="-m-1.5 p-1.5">
+                                        <span class="sr-only">Home</span>
+                                    </a>
+                                    <button type="button" id="close-menu"
+                                        class="inline-flex items-center justify-center rounded-md p-1.5 text-gray-700">
+                                        <span class="sr-only">Close menu</span>
+                                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                            stroke="currentColor" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <div class="mt-6 flow-root">
+                                    <div class="-my-6 divide-y divide-gray-500/10">
+                                        <div class="space-y-2 py-6">
+                                            <a href="#about"
+                                                class="-mx-3 text-sm font-semibold leading-6 text-center text-gray-900 block px-4 py-2 hover:bg-gray-100">
+                                                About
+                                            </a>
+                                            <a href="#works"
+                                                class="-mx-3 text-sm font-semibold leading-6 text-center text-gray-900 block px-4 py-2 hover:bg-gray-100">
+                                                Works
+                                            </a>
+                                            <a href="#contact"
+                                                class="-mx-3 text-sm font-semibold leading-6 text-center text-gray-900 block px-4 py-2 hover:bg-gray-100">
+                                                Contact
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Mobile menu, show/hide based on menu open state -->
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center py-6">
+                <div class="mx-auto max-w-screen-xl px-4 justify-center text-center flex h-screen items-center">
+                    <div class="mx-auto max-w-3xl text-center -mt-60">
+                        <h1
+                            class="text-gray-200 bg-clip-text font-normal lg:text-7xl text-3xl tracking-wider custom-font-1">
+                            Jose P. Rizal
+                        </h1>
+
+                        <p class="text-gray-300 mx-auto mt-4 max-w-xl sm:text-xl/relaxed tracking-wider font-light">
+                            The Life Of Our National Hero
+                        </p>
+                        <audio id="backgroundSound" src="./src/audio/audio.mp3" preload="auto">
+                        </audio>
+                        <button id="playButton" class="bg-stone-200 hover:bg-stone-800 hover:text-white px-8 py-2 m-2 rounded">Listen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- End of Header -->
+
+    <!-- About Section -->
+
+    <section id="about">
+        <div class="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:h-screen lg:grid-cols-2">
+                <div class="relative z-10 lg:py-16">
+                    <div class="relative h-64 sm:h-80 lg:h-full overflow-hidden" id="imageShow">
+                        <img id="frontImage" alt="Rizal's picture" src="./src/images/images (1).jpg"
+                            class="absolute inset-0 h-full w-full object-cover" />
+                        <img id="backImage" alt="Another image" src="./src/images/image_870x_6649fd8055e46.jpg"
+                            class="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-500" />
+                    </div>
+                    <div style="display: none;" id="vidShow">
+                        <video id="myVideo" width="640" height="360" controls>
+                            <source src="./src/audio/Jose Rizal Travelogue Opening Sequence.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                
+
+                <div class="relative flex items-center bg-gray-100">
+                    <span class="hidden lg:absolute lg:inset-y-0 lg:-start-16 lg:block lg:w-16 lg:bg-gray-100"></span>
+
+                    <div class="p-8 sm:p-16 lg:p-24">
+                        <h2 class="text-2xl font-bold sm:text-3xl">
+                            About Rizal
+                        </h2>
+
+                        <h3 class="text-2xl mt-3 font-bold">José Protacio Rizal Mercado y Alonzo Realonda</h3>
+                        <p class="mt-0 text-gray-600">
+                            José Rizal (1861–1896) was a Filipino nationalist, writer, and revolutionary regarded as one
+                            of the greatest heroes of the Philippines. Born in Calamba, Laguna, Rizal was a polymath,
+                            excelling in multiple fields such as medicine, literature, and linguistics. He completed his
+                            medical studies in Europe, where he also became politically active in advocating for reforms
+                            in the Philippines, which was then a colony of Spain.
+
+                            Rizal wrote two influential novels, Noli Me Tangere (1887) and El Filibusterismo (1891),
+                            which exposed the social injustices and abuses of Spanish colonial rule. These works stirred
+                            a sense of nationalism among Filipinos and laid the groundwork for the Philippine Revolution
+                            against Spain.
+
+                            Although Rizal advocated for peaceful reform rather than violent revolution, his ideas were
+                            seen as subversive. He was arrested and executed by the Spanish authorities in 1896. His
+                            martyrdom ignited the revolution, eventually leading to Philippine independence.
+
+                            Rizal is celebrated for his intellect, patriotism, and his role in inspiring the
+                            Philippines' struggle for freedom.
+                        </p>
+                        <button
+                            id="playVideoButton"
+                            class="bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4 inline-block">
+                            Play Video
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End of About Section -->
+
+    <!-- Family Background -->
+
+    <section class="bg-gray-100">
+        <div class="container grid grid-cols-1 gap-10 px-6 py-12 mx-auto lg:grid-cols-3">
+            <div>
+                <h1 class="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl ">Family Background</h1>
+                <p class="mt-3 text-gray-500 ">José Rizal was born to a well-off family in Calamba, Laguna, Philippines.
+                    His parents and siblings played significant roles in his life.</p>
+            </div>
+
+            <div class="grid grid-cols-1 gap-12 lg:col-span-2 sm:grid-cols-2">
+                <div>
+                    <h2 class="font-semibold text-lg text-gray-800">Francisco Mercado Rizal (1818–1898)</h2>
+                    <p class="mt-1 text-gray-500">Father: A prosperous farmer and educated man, he instilled values of
+                        hard work and education in his children.</p>
+                </div>
+
+                <div>
+                    <h2 class="font-semibold text-lg text-gray-800">Teodora Alonso Realonda (1827–1911)</h2>
+                    <p class="mt-1 text-gray-500">Mother: A highly educated woman, she was instrumental in Rizal's early
+                        education and fostered his love for literature.</p>
+                </div>
+
+                <div>
+                    <h2 class="font-semibold text-lg text-gray-800">Saturnina Rizal (1850–1913)</h2>
+                    <p class="mt-1 text-gray-500">Eldest Sister: Known as "Neneng," she acted as a second mother to
+                        Rizal and supported his education.</p>
+                </div>
+
+                <div>
+                    <h2 class="font-semibold text-lg text-gray-800">Paciano Rizal (1851–1930)</h2>
+                    <p class="mt-1 text-gray-500">Brother: A key figure in Rizal’s life and a revolutionary, he
+                        supported José's educational pursuits.</p>
+                </div>
+
+                <div>
+                    <h2 class="font-semibold text-lg text-gray-800">Narcisa Rizal (1852–1939)</h2>
+                    <p class="mt-1 text-gray-500">Sister: Supported Rizal during his time in Europe and helped care for
+                        him in his exile.</p>
+                </div>
+
+                <div>
+                    <h2 class="font-semibold text-lg text-gray-800">Olympia Rizal (1855–1887)</h2>
+                    <p class="mt-1 text-gray-500">Sister: Close to Rizal, she died at a young age.</p>
+                </div>
+
+                <div>
+                    <h2 class="font-semibold text-lg text-gray-800">Lucia Rizal (1857–1919)</h2>
+                    <p class="mt-1 text-gray-500">Sister: Married Mariano Herbosa, her husband was denied a Catholic
+                        burial due to association with Rizal.</p>
+                </div>
+
+                <div>
+                    <h2 class="font-semibold text-lg text-gray-800">Maria Rizal (1859–1945)</h2>
+                    <p class="mt-1 text-gray-500">Sister: A confidant of Rizal who supported him during his exile.</p>
+                </div>
+
+                <div>
+                    <h2 class="font-semibold text-lg text-gray-800">Concepcion Rizal (1862–1865)</h2>
+                    <p class="mt-1 text-gray-500">Sister: Died at three years old; her death profoundly affected Rizal.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="font-semibold text-lg text-gray-800">Josefa Rizal (1865–1945)</h2>
+                    <p class="mt-1 text-gray-500">Sister: Unmarried and involved in the revolutionary movement.</p>
+                </div>
+
+                <div>
+                    <h2 class="font-semibold text-lg text-gray-800">Trinidad Rizal (1868–1951)</h2>
+                    <p class="mt-1 text-gray-500">Sister: With Rizal during his final moments; he entrusted her with his
+                        last poem.</p>
+                </div>
+
+                <div>
+                    <h2 class="font-semibold text-lg text-gray-800">Soledad Rizal (1870–1929)</h2>
+                    <p class="mt-1 text-gray-500">Youngest Sister: Married Pantaleon Quintero; also a schoolteacher.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- His Works -->
+
+    <section id="works">
+        <div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8">
+            <header class="text-center">
+                <h2 class="text-xl font-bold text-gray-900 sm:text-3xl">
+                    His Works
+                </h2>
+
+                <p class="max-w-lg mx-auto mt-4 text-gray-500">
+                    José Rizal was a prolific writer and reformist whose works played a crucial role in the Philippine
+                    struggle for independence. His novels, essays, and poems highlighted the social injustices of his
+                    time and inspired a sense of nationalism among Filipinos. Through his literary contributions, Rizal
+                    sought to awaken the consciousness of his fellow countrymen and advocate for social reforms, making
+                    him a pivotal figure in Philippine history.
+                </p>
+
+            </header>
+
+            <ul class="grid grid-cols-1 gap-4 mt-8 lg:grid-cols-3">
+                <li>
+                    <a href="https://home.uchicago.edu/~aabbott/barbpapers/barbrizal.pdf" class="relative block group">
+                        <img src="./src/images/download.jpg" alt="Noli Me Tangere"
+                            class="object-cover w-full transition duration-500 aspect-square group-hover:opacity-90" />
+                        <p class="absolute bottom-0 left-0 bg-gray-800 text-white p-2">Noli Me Tangere</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.geocities.ws/qcpujoserizal/Rizal/pdf/El%20Fili.pdf" class="relative block group">
+                        <img src="./src/images/download (1).jpg"
+                            alt="El Filibusterismo"
+                            class="object-cover w-full transition duration-500 aspect-square group-hover:opacity-90" />
+                        <p class="absolute bottom-0 left-0 bg-gray-800 text-white p-2">El Filibusterismo</p>
+                    </a>
+                </li>
+
+                <li class="lg:col-span-2 lg:col-start-2 lg:row-span-2 lg:row-start-1">
+                    <a href="#" class="relative block group">
+                        <img src="./src/images/images (2).jpg"
+                            alt="La Liga Filipina"
+                            class="object-cover w-full transition duration-500 aspect-square group-hover:opacity-90" />
+                        <p class="absolute bottom-0 left-0 bg-gray-800 text-white p-2">La Liga Filipina</p>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </section>
+
+
+    <!-- Academic Background -->
+
+    <section class="bg-gray-100">
+        <div class="container px-4 py-16 mx-auto space-y-8 lg:max-w-3xl">
+            <h2 class="text-2xl font-bold md:text-4xl">Academic Background</h2>
+            <div class="space-y-8">
+                <div>
+                    <h3 class="mb-3 text-lg font-bold md:text-xl">Bachelor of Arts - 1877</h3>
+                    <ul class="space-y-4">
+                        <li class="space-y-1">
+                            <div class="flex items-center space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4 fill-current ">
+                                    <path d="M426.072,86.928A238.75,238.75,0,0,0,88.428,424.572,238.75,238.75,0,0,0,426.072,86.928ZM257.25,462.5c-114,0-206.75-92.748-206.75-206.75S143.248,49,257.25,49,464,141.748,464,255.75,371.252,462.5,257.25,462.5Z"></path>
+                                    <polygon points="221.27 305.808 147.857 232.396 125.23 255.023 221.27 351.063 388.77 183.564 366.142 160.937 221.27 305.808"></polygon>
+                                </svg>
+                                <h4 class="font-medium">Ateneo Municipal de Manila</h4>
+                            </div>
+                            <p class="ml-7 ">Graduated with a Bachelor of Arts, excelling in his studies.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-3 text-lg font-bold md:text-xl">Doctor of Medicine - 1884</h3>
+                    <ul class="space-y-4">
+                        <li class="space-y-1">
+                            <div class="flex items-center space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4 fill-current ">
+                                    <path d="M426.072,86.928A238.75,238.75,0,0,0,88.428,424.572,238.75,238.75,0,0,0,426.072,86.928ZM257.25,462.5c-114,0-206.75-92.748-206.75-206.75S143.248,49,257.25,49,464,141.748,464,255.75,371.252,462.5,257.25,462.5Z"></path>
+                                    <polygon points="221.27 305.808 147.857 232.396 125.23 255.023 221.27 351.063 388.77 183.564 366.142 160.937 221.27 305.808"></polygon>
+                                </svg>
+                                <h4 class="font-medium">University of Santo Tomas, Manila</h4>
+                            </div>
+                            <p class="ml-7 ">Graduated with a degree in Medicine, specializing in ophthalmology.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div></div>
+                    <h3 class="mb-3 text-lg font-bold md:text-xl">Philosophy and Letters - 1885</h3>
+                    <ul class="space-y-4">
+                        <li class="space-y-1">
+                            <div class="flex items-center space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4 fill-current ">
+                                    <path d="M426.072,86.928A238.75,238.75,0,0,0,88.428,424.572,238.75,238.75,0,0,0,426.072,86.928ZM257.25,462.5c-114,0-206.75-92.748-206.75-206.75S143.248,49,257.25,49,464,141.748,464,255.75,371.252,462.5,257.25,462.5Z"></path>
+                                    <polygon points="221.27 305.808 147.857 232.396 125.23 255.023 221.27 351.063 388.77 183.564 366.142 160.937 221.27 305.808"></polygon>
+                                </svg>
+                                <h4 class="font-medium">Universidad Central de Madrid</h4>
+                            </div>
+                            <p class="ml-7 ">Studied Philosophy and Letters, which enriched his understanding of societal issues.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer class="bg-black text-white lg:grid lg:grid-cols-2" id="contact">
+        <div class="px-4 py-16 sm:px-6 lg:col-span-2 lg:px-8">
+            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
+                <div>
+                    <p>
+                        <span class="text-xs uppercase tracking-wider text-gray-300">
+                            Contact Me
+                        </span>
+
+                        <a href="mailto:youremail@sample.com"
+                            class="block text-xl font-medium text-white hover:opacity-75 sm:text-2xl hover:underline underline-offset-4">
+                            wendel@gmail.com
+                        </a>
+                    </p>
+                </div>
+
+
+
+                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <div>
+                        <p>
+                            <span class="text-xs uppercase tracking-wider text-gray-500">
+                                Let's connect
+                            </span>
+                        </p>
+
+                        <ul class="mt-1 flex gap-6">
+                            <li>
+                                <a href="https://www.facebook.com/" rel="noreferrer" target="_blank"
+                                    class="text-gray-700 transition hover:opacity-75" data-te-toggle="tooltip"
+                                    data-te-placement="top" title="Facebook">
+                                    <span class="sr-only">Facebook</span>
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                                        class="main-grid-item-icon" fill="none" stroke="currentColor"
+                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                                    </svg>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" rel="noreferrer" target="_blank"
+                                    class="text-gray-700 transition hover:opacity-75" data-te-toggle="tooltip"
+                                    title="Instagram">
+                                    <span class="sr-only">Instagram</span>
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                                        class="main-grid-item-icon" fill="none" stroke="currentColor"
+                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                        <rect height="20" rx="5" ry="5" width="20" x="2" y="2" />
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                                    </svg>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" rel="noreferrer" target="_blank"
+                                    class="text-gray-700 transition hover:opacity-75" data-te-toggle="tooltip"
+                                    title="LinkedIn">
+                                    <span class="sr-only">LinkedIn</span>
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                                        class="main-grid-item-icon" fill="none" stroke="currentColor"
+                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                        <path
+                                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                        <rect height="12" width="4" x="2" y="9" />
+                                        <circle cx="4" cy="4" r="2" />
+                                    </svg>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" rel="noreferrer" target="_blank"
+                                    class="text-gray-700 transition hover:opacity-75" data-te-toggle="tooltip"
+                                    title="GitHub">
+                                    <span class="sr-only">GitHub</span>
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                                        class="main-grid-item-icon" fill="none" stroke="currentColor"
+                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                        <path
+                                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                                    </svg>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" rel="noreferrer" target="_blank"
+                                    class="text-gray-700 transition hover:opacity-75" data-te-toggle="tooltip"
+                                    title="Resume">
+                                    <span class="sr-only">Resume</span>
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                                        class="main-grid-item-icon" fill="none" stroke="currentColor"
+                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                        <polyline points="14 2 14 8 20 8" />
+                                        <line x1="16" x2="8" y1="13" y2="13" />
+                                        <line x1="16" x2="8" y1="17" y2="17" />
+                                        <polyline points="10 9 9 9 8 9" />
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </footer>
+    <!-- End of Footer -->
+
+    <button onclick="backToTop()" id="backToTopBtn"
+        class="fixed bottom-10 right-10 p-2 rounded-full flex items-center justify-center transition-colors focus:outline-none"
+        title="Back to Top">
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+    <script src="./src/js/script.js"></script>
+</body>
+
+</html>
